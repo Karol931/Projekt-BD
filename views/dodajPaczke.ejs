@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Paczka</title>
+</head>
+
+<body>
+    <div class="strona">
+        <div class="naglowek">
+            Paczka
+            <a href="/" style="font-size: 16px;">Powrót do strony głównej</a>
+        </div>
+        <div class="dodaj-paczke">
+            <div style="text-align: center; color: red;">
+                <%= err %>
+            </div>
+            <form action="/dodajPaczke" method="post" id="dodajPaczke">
+
+                <div class="nadawca">
+                    <h1>Nadawca</h1>
+                    <br>
+                    <table id="dane-nadawcy">
+                        <tr>
+                            <td colspan="2" style="color: red; text-align: center;">
+                                <%= errN %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="imie-nadawcy">Imie:</label></td>
+                            <td><input type="text" id="imie-nadawcy" class="imieNadawcy" name="imieNadawcy"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="nazwisko-nadawcy">Nazwisko:</label></td>
+                            <td><input type="text" id="nazwisko-nadawcy" class="nazwiskoNadawcy" name="nazwiskoNadawcy">
+                            </td>
+                        </tr>
+                    </table>
+                    <h3>Wysyłka z:</h3>
+                    <input type="radio" id="wysylka-paczkomatem" name="wysylkaPaczkomatem"> Paczkomatu
+                    <input type="radio" id="wysylka-domowa" name="wysylkaDomowa"> Domu
+                    <br />
+                    <select id="lista-paczkomatow-wysylka" name="listaPaczkomatowWysylka" form="dodajPaczke">
+                        <% for(let i=0; i < ilosc; i++) {%>
+                            <option>
+                                <%=paczkomaty[i]%>
+                            </option>
+                            <%}%>
+                    </select>
+                    <br>
+                    <button type="submit" id="dodaj-paczke-przycisk">Nadaj</button>
+                </div>
+                <div class="odbiorca">
+                    <h1>Odbiorca</h1>
+                    <br>
+                    <table id="dane-odbiorcy">
+                        <tr>
+                            <td colspan="2" style="color: red; text-align: center;">
+                                <%= errO %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="imie-odbiorcy">Imie:</label></td>
+                            <td><input type="text" id="imie-odbiorcy" class="imieOdbiorcy" name="imieOdbiorcy"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="nazwisko-odbiorcy">Nazwisko:</label></td>
+                            <td><input type="text" id="nazwisko-odbiorcy" class="nazwiskoOdbiorcy"
+                                    name="nazwiskoOdbiorcy"></td>
+                        </tr>
+                    </table>
+                    <h3>Dostawa do:</h3>
+                    <input type="radio" id="odbior-paczkomatem" name="odbiorPaczkomatem"> Paczkomatu
+                    <input type="radio" id="odbior-domowy" name="odbiorDomowy"> Domu
+                    <br />
+                    <select id="lista-paczkomatow-odbior" name="listaPaczkomatowOdbior" form="dodajPaczke">
+                        <% for(let i=0; i < ilosc; i++) {%>
+                            <option>
+                                <%=paczkomaty[i]%>
+                            </option>
+                            <%}%>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="/js/dodajPaczke.js"></script>
+</body>
+
+</html>

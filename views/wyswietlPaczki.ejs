@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Paczka</title>
+</head>
+
+<body>
+    <div class="strona">
+        <div class="naglowek">
+            Paczka
+            <a href="/kurier/zalogowany<%-url-%>" style="font-size: 16px;">Powrót do strony głównej</a>
+        </div>
+        <% for(let i=0; i < ilosc; i++) { %>
+            <div id="sprawdzono-paczke">
+                <p style="font-size: 20px;"><b>Status:</b>
+                    <%=dane[i]._status %>
+                </p>
+                <br>
+                <div id="dane-paczki">
+                    <table>
+                        <tr>
+                            <th style="font-size: 24px; text-align: left;">Odbiorca:</th>
+                            <th style="font-size: 24px; text-align: left;">Nadawca:</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <b>Imie:</b>
+                                            <%= dane[i].imie_odbiorcy %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b>Nazwisko:</b>
+                                            <%= dane[i].nazwisko_odbiorcy %>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <b>Imie:</b>
+                                            <%= dane[i].imie_nadawcy %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <b>Nazwisko:</b>
+                                            <%= dane[i].nazwisko_nadawcy %>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th style="font-size: 24px; text-align: left;">Pukt odbioru:</th>
+                            <th style="font-size: 24px; text-align: left;">Punkt nadania:</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <% if(dane[i].czypaczkomat_odbior) {%>
+                                                <b>Paczkomat:</b>
+                                                <%} else {%>
+                                                    <b>Dom:</b>
+                                                    <%}%>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <%= dane[i].miasto_odbioru%>,
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <%= dane[i].ulica_odbioru%>
+                                                <%= dane[i].nr_ulicy_odbioru %>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <% if(dane[i].czypaczkomat_nadanie) {%>
+                                                <b>Paczkomat:</b>
+                                                <%} else {%>
+                                                    <b>Dom:</b>
+                                                    <%}%>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <%= dane[i].miasto_nadania%>,
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <%= dane[i].ulica_nadania%>
+                                                <%= dane[i].nr_ulicy_nadania %>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <br>
+            </div>
+            <% } %>
+    </div>
+    </div>
+</body>
+
+</html>

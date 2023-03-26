@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Paczka</title>
+</head>
+
+<body>
+    <div class="strona">
+        <div class="naglowek">
+            Paczka
+            <a href="/kurier/zalogowany<%-url-%>" style="font-size: 16px;">Powrót do strony głównej</a>
+        </div>
+        <form action="/kurier/zmienStatus<%-url-%>" id="statusForm" method="post">
+            <div class="zmien-status">
+                <% if(ilosc==0) { %>
+                    <h3 style="text-align: center;">
+                        Nie posiadasz żadnych paczek
+                    </h3>
+                    <%} else { %>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="paczka">Paczka: </label>
+                                </td>
+                                <td>
+                                    <select name="paczka" form="statusForm">
+                                        <% for(let i=0; i< ilosc; i++) {%>
+                                            <option>
+                                                <%= paczki[i] %>
+                                            </option>
+                                            <% } %>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="status">Status:</label>
+                                </td>
+                                <td>
+                                    <select name="status" form="statusForm">
+                                        <option>Wysłana</option>
+                                        <option>Odebrana przez kuriera</option>
+                                        <option>Dostarczona</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                        <div style="text-align: left;">
+                            <button type="submit">Zmień</button>
+                        </div>
+                        <% } %>
+            </div>
+        </form>
+        <div style="text-align: center;">
+        </div>
+    </div>
+</body>
+
+</html>

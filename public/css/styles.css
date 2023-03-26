@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(226, 187, 114);
+}
+
+.strona {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.naglowek {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: blue;
+    text-align: center;
+    color: rgb(252, 198, 96);
+    height: 100px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    gap: 10px;
+}
+
+a,
+button {
+    text-decoration: none;
+    background-color: orange;
+    color: black;
+    border: 2px solid orange;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.przyciski>ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.przyciski {
+    display: flex;
+    flex-direction: column;
+    background-color: lightblue;
+    border: 10px solid blue;
+    border-radius: 10px;
+    height: 180px;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.przyciski-kurier {
+    background-color: lightblue;
+    border: 10px solid blue;
+    border-radius: 10px;
+    height: 120px;
+    justify-content: center;
+}
+
+.przyciski-kurier>ul {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.zmien-status {
+    display: flex;
+    flex-direction: column;
+    background-color: lightblue;
+    border: 10px solid blue;
+    border-radius: 10px;
+    height: 100px;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+li {
+    list-style-type: none;
+}
+
+.dodaj-paczke {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: lightblue;
+    border: 10px solid blue;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#dodajPaczke {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.dodano-paczke {
+    display: none;
+    gap: 20px;
+    justify-content: center;
+    background-color: lightblue;
+    border: 10px solid blue;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+label+input {
+    margin: 3px;
+}
+
+#lista-paczkomatow-wysylka,
+#lista-paczkomatow-odbior {
+    display: none;
+}
+
+.dodaj-uzytkownika,
+.zaloguj-się,
+.dodaj-kuriera,
+.dodaj-paczkomat,
+.dodano-paczke,
+.zmieniono-status {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    background-color: lightblue;
+    border: 10px solid blue;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.uzytkownik-dodany {
+    display: block;
+    gap: 20px;
+    justify-content: center;
+    background-color: lightblue;
+    border: 10px solid blue;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+
+#sprawdz-paczke {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    background-color: lightblue;
+    border: 10px solid blue;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#sprawdzono-paczke {
+    display: block;
+    justify-content: center;
+    background-color: lightblue;
+    border: 10px solid blue;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#dane-paczki {
+    display: flex;
+    gap: 20px;
+}

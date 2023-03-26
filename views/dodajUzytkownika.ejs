@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Paczka</title>
+</head>
+
+<body>
+    <div class="strona">
+        <div class="naglowek">
+            Paczka
+            <a href="/" style="font-size: 16px;">Powrót do strony głównej</a>
+        </div>
+        <form action="/dodajUzytkownika" method="post">
+            <div class="dodaj-uzytkownika">
+                <h1>Dodaj Użytkownika</h1>
+                <br>
+                <table>
+                    <tr>
+                        <td></td>
+                        <td style="color: red; font-size: 18px;">
+                            <%= tekst %>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="imie">Imie:</label></td>
+                        <td><input type="text" id="imie" class="imie" name="imie"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="nazwisko">Nazwisko:</label></td>
+                        <td><input type="text" id="nazwisko" class="nazwisko" name="nazwisko"></td>
+                    </tr>
+                    <tr>
+                        <th style="text-align: left;">Adres:</th>
+                    </tr>
+                    <tr>
+                        <td><label for="miasto">Miasto:</label></td>
+                        <td><input type="text" id="miasto" class="miasto" name="miasto"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="ulica">Ulica:</label></td>
+                        <td><input type="text" id="ulica" class="ulica" name="ulica"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="nr">Nr ulicy:</label></td>
+                        <td><input type="text" id="nr" class="nr" name="nr"></td>
+                    </tr>
+                </table>
+                <br>
+                <button type="submit" id="dodaj-uzytkownika-przycisk">Dodaj</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
